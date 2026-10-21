@@ -1,135 +1,217 @@
 
+
 <!DOCTYPE html>
+
 <html lang="ja">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>柏のみ。｜今夜、どこで飲む？</title>
+
+<title>柏のみ。｜柏のおすすめ居酒屋</title>
+
 <style>
+
 *{box-sizing:border-box}
-body{margin:0;background:#f5f4f0;color:#202020;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif}
-header{background:#171717;color:white;padding:27px 20px 24px}
-.logo{font-size:13px;letter-spacing:3px;color:#d8bd83}
-h1{font-size:34px;margin:10px 0}
-header p{font-size:13px;color:#ddd;margin:0}
-main{max-width:650px;margin:auto;padding:18px 15px}
-.intro{font-size:14px;line-height:1.8;margin:0 0 18px}
-.panel{background:white;padding:17px;border-radius:15px;margin-bottom:18px}
-label{display:block;font-size:13px;font-weight:bold;margin:12px 0 7px}
+
+body{margin:0;background:#f5f4f0;color:#222;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+
+header{background:#171717;color:white;padding:28px 20px}
+
+.logo{color:#d7bd83;font-size:12px;letter-spacing:3px}
+
+h1{font-size:36px;margin:10px 0}
+
+header p{font-size:13px;color:#ddd}
+
+main{max-width:680px;margin:auto;padding:18px 14px}
+
+.intro{font-size:14px;line-height:1.8}
+
+.panel,.shop{background:white;border-radius:14px;padding:16px;margin:15px 0}
+
+label{display:block;font-size:13px;font-weight:bold;margin:12px 0 6px}
+
 select,input{width:100%;padding:12px;border:1px solid #ddd;border-radius:9px;background:white;font-size:15px}
-button{border:0;border-radius:9px;padding:12px;background:#202020;color:white;font-size:14px}
-.filters{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.filters label{margin-top:0}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
 .wide{grid-column:1/-1}
-#count{font-size:13px;color:#666;margin:12px 2px}
-.shop{background:white;border-radius:14px;padding:17px;margin-bottom:12px}
-.shop-top{display:flex;justify-content:space-between;gap:10px;align-items:start}
-.shop h2{font-size:18px;margin:0 0 7px}
-.price{font-size:13px;font-weight:bold;white-space:nowrap}
-.tags{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
-.tag{background:#f0eee8;border-radius:20px;padding:5px 9px;font-size:11px}
+
+button{padding:12px;border:0;border-radius:9px;background:#222;color:white;width:100%}
+
+.shop h2{font-size:18px;margin:0}
+
+.price{font-weight:bold;font-size:13px;margin-top:8px}
+
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+
+.tag{background:#efede7;padding:5px 9px;border-radius:20px;font-size:11px}
+
 .shop p{font-size:13px;line-height:1.7;color:#555}
-.actions{display:flex;gap:8px;margin-top:12px}
-.actions a{flex:1;text-align:center;text-decoration:none;border:1px solid #222;border-radius:8px;padding:10px;color:#222;font-size:13px}
-.actions a:first-child{background:#222;color:white}
-.note{font-size:11px;color:#777;line-height:1.7;margin:20px 2px}
-footer{text-align:center;padding:24px;font-size:12px;color:#777}
+
+.shop a{display:block;text-align:center;padding:11px;border-radius:8px;background:#222;color:white;text-decoration:none;font-size:13px;margin-top:8px}
+
+.shop a.secondary{background:white;color:#222;border:1px solid #222}
+
+.note{font-size:11px;line-height:1.7;color:#777}
+
 </style>
+
 </head>
+
 <body>
+
 <header>
+
 <div class="logo">KASHIWA NIGHT GUIDE</div>
+
 <h1>柏のみ。</h1>
+
 <p>今夜、どこで飲む？を、すぐ決めよう。</p>
+
 </header>
+
 <main>
-<p class="intro">予算・ジャンル・気分から、今夜のお店探し。<br>1軒目も、2軒目も、柏で楽しもう。</p>
+
+<p class="intro">柏で飲むなら、ここから探そう。<br>予算・ジャンル・気分からおすすめのお店を見つけよう！</p>
 
 <section class="panel">
+
 <strong>今夜のお店を探す</strong>
-<div class="filters">
-<div>
-<label for="budget">予算</label>
+
+<div class="grid">
+
+<div><label for="budget">予算</label>
+
 <select id="budget">
-<option value="all">指定なし</option>
+
+<option value="99999">指定なし</option>
+
 <option value="2000">2,000円以内</option>
+
 <option value="3000">3,000円以内</option>
+
+<option value="4000">4,000円以内</option>
+
 <option value="5000">5,000円以内</option>
-</select>
-</div>
-<div>
-<label for="genre">ジャンル</label>
+
+</select></div>
+
+<div><label for="genre">ジャンル</label>
+
 <select id="genre">
+
 <option value="all">全部</option>
-<option value="焼き鳥">焼き鳥</option>
+
+<option value="焼き鳥">焼き鳥・串焼き</option>
+
 <option value="海鮮">海鮮</option>
-<option value="居酒屋">居酒屋</option>
-<option value="バー">バー</option>
-<option value="ラーメン">ラーメン</option>
-</select>
-</div>
-<div class="wide">
-<label for="mood">今の気分</label>
+
+<option value="居酒屋">大衆居酒屋</option>
+
+<option value="バー">バー・二軒目</option>
+
+</select></div>
+
+<div class="wide"><label for="mood">今の気分</label>
+
 <select id="mood">
-<option value="all">なんでもいい！</option>
+
+<option value="all">なんでも！</option>
+
 <option value="ワイワイ">ワイワイ飲みたい</option>
+
 <option value="ゆっくり">ゆっくり話したい</option>
+
 <option value="二軒目">二軒目に行きたい</option>
-<option value="ひとり">ひとりで気軽に</option>
-</select>
+
+</select></div>
+
+<div class="wide"><label for="keyword">キーワード</label>
+
+<input id="keyword" placeholder="店名・個室・串焼きなど"></div>
+
+<div class="wide"><button id="reset">条件をリセット</button></div>
+
 </div>
-<div class="wide">
-<label for="keyword">店名・キーワード</label>
-<input id="keyword" placeholder="例：個室、駅近、安い">
-</div>
-<div class="wide">
-<button id="reset" style="width:100%">条件をリセット</button>
-</div>
-</div>
+
 </section>
 
 <div id="count"></div>
-<div id="results"></div>
-<p class="note">※現在はサイトの動作確認用の試作品です。掲載店舗はサンプルで、実在店舗の情報や営業状況を確認したものではありません。お店を実際に掲載する際は、住所・料金・営業時間などを確認して更新します。</p>
-</main>
-<footer>柏のみ。 © 2026</footer>
-<script>
-const shops=[
-{name:"炭火やきとり（サンプル）",genre:"焼き鳥",price:2500,mood:["ワイワイ","ゆっくり"],tags:["焼き鳥","友達と","居酒屋"],desc:"焼き鳥をつまみながら、気軽に飲みたい夜に。",query:"柏 焼き鳥 居酒屋"},
-{name:"海鮮酒場（サンプル）",genre:"海鮮",price:3500,mood:["ワイワイ","ゆっくり"],tags:["海鮮","刺身","日本酒"],desc:"刺身や海鮮料理を楽しみたいときに。",query:"柏 海鮮 居酒屋"},
-{name:"気軽な大衆居酒屋（サンプル）",genre:"居酒屋",price:2500,mood:["ワイワイ"],tags:["安め","大人数","にぎやか"],desc:"みんなでワイワイ飲みたい夜の候補。",query:"柏 大衆居酒屋"},
-{name:"落ち着くバー（サンプル）",genre:"バー",price:3000,mood:["ゆっくり","二軒目","ひとり"],tags:["バー","二軒目","落ち着く"],desc:"二軒目や、ゆっくり話したいときの候補。",query:"柏 バー"},
-{name:"カジュアルバー（サンプル）",genre:"バー",price:2000,mood:["二軒目","ひとり","ワイワイ"],tags:["二軒目","カジュアル","気軽"],desc:"もう少しだけ飲みたいときに。",query:"柏 カジュアルバー"},
-{name:"締めのラーメン（サンプル）",genre:"ラーメン",price:1200,mood:["二軒目","ひとり"],tags:["ラーメン","締め","ひとり"],desc:"飲んだあとの締めを探しているときに。",query:"柏 ラーメン"}
-];
-const results=document.getElementById("results");
-function render(){
-const budget=document.getElementById("budget").value;
-const genre=document.getElementById("genre").value;
-const mood=document.getElementById("mood").value;
-const keyword=document.getElementById("keyword").value.trim().toLowerCase();
-const found=shops.filter(s=>(budget==="all"||s.price<=Number(budget))&&(genre==="all"||s.genre===genre)&&(mood==="all"||s.mood.includes(mood))&&(!keyword||(s.name+s.genre+s.tags.join("")+s.desc).toLowerCase().includes(keyword)));
-document.getElementById("count").textContent=found.length+"件のお店候補";
-results.innerHTML="";
-if(!found.length){results.innerHTML="<section class='panel'>条件に合う候補がないよ。条件を変えてみてね！</section>";return}
-found.forEach(s=>{
-const el=document.createElement("section");
-el.className="shop";
-el.innerHTML="<div class='shop-top'><h2></h2><div class='price'></div></div><div class='tags'></div><p></p><div class='actions'><a target='_blank' rel='noopener'>Googleマップで探す</a><a target='_blank' rel='noopener'>お店情報を検索</a></div>";
-el.querySelector("h2").textContent=s.name;
-el.querySelector(".price").textContent="予算目安 "+s.price.toLocaleString()+"円";
-s.tags.forEach(t=>{const span=document.createElement("span");span.className="tag";span.textContent=t;el.querySelector(".tags").appendChild(span)});
-el.querySelector("p").textContent=s.desc;
-el.querySelectorAll("a")[0].href="https://www.google.com/maps/search/"+encodeURIComponent(s.query);
-el.querySelectorAll("a")[1].href="https://www.google.com/search?q="+encodeURIComponent(s.query);
-results.appendChild(el);
-});
-}
-["budget","genre","mood"].forEach(id=>document.getElementById(id).addEventListener("change",render));
-document.getElementById("keyword").addEventListener("input",render);
-document.getElementById("reset").addEventListener("click",()=>{document.getElementById("budget").value="all";document.getElementById("genre").value="all";document.getElementById("mood").value="all";document.getElementById("keyword").value="";render()});
-render();
-</script>
-</body>
-</html>
 
+<div id="results"></div>
+
+<p class="note">※掲載情報は来店前に各店舗の公式情報でご確認ください。予算は目安です。おすすめは柏のみ。編集部の選定候補で、店舗からの公認・提携を示すものではありません。</p>
+
+</main>
+
+<script>
+
+const shops=[
+
+{name:"居酒屋 ばらかもん 柏駅前店",genre:"居酒屋",price:3500,mood:["ワイワイ","ゆっくり"],tags:["野菜巻き串","飲み放題","柏駅西口徒歩1分"],desc:"名物の野菜巻き串や串焼きが楽しめる駅近の居酒屋。友達との飲み会に。",query:"居酒屋 ばらかもん 柏駅前店",url:"https://barakamon-kashiwa.owst.jp/"},
+
+{name:"焼鳥どん 柏店",genre:"焼き鳥",price:3000,mood:["ワイワイ"],tags:["焼き鳥","友達と","串料理"],desc:"焼き鳥を楽しみたい夜にチェックしたいお店。",query:"焼鳥どん 柏店",url:"https://www.google.com/search?q=焼鳥どん+柏店"},
+
+{name:"豪快！藁焼き酒場 わらいち 柏東口店",genre:"海鮮",price:4500,mood:["ワイワイ","ゆっくり"],tags:["藁焼き","海鮮","日本酒"],desc:"藁焼きや海鮮料理を楽しみたい日に。",query:"豪快 藁焼き酒場 わらいち 柏東口店",url:"https://www.google.com/search?q=わらいち+柏東口店"},
+
+{name:"大衆酒場 BEETLE 柏",genre:"居酒屋",price:3000,mood:["ワイワイ","二軒目"],tags:["大衆酒場","気軽","飲み会"],desc:"気軽に飲みたいときの候補。メニューや営業情報を確認して行こう。",query:"大衆酒場 BEETLE 柏",url:"https://www.google.com/search?q=大衆酒場+BEETLE+柏"},
+
+{name:"おでんと炉端焼き あおちょ 柏店",genre:"居酒屋",price:3500,mood:["ゆっくり","ワイワイ"],tags:["おでん","炉端焼き","和食"],desc:"おでんや炉端焼きを食べながら飲みたい日に。",query:"おでんと炉端焼き あおちょ 柏店",url:"https://www.google.com/search?q=あおちょ+柏店"}
+
+];
+
+const $=id=>document.getElementById(id);
+
+function render(){
+
+const b=Number($("budget").value),g=$("genre").value,m=$("mood").value,k=$("keyword").value.trim().toLowerCase();
+
+const list=shops.filter(s=>s.price<=b&&(g==="all"||s.genre===g)&&(m==="all"||s.mood.includes(m))&&(!k||(s.name+s.tags.join("")+s.desc+s.genre).toLowerCase().includes(k)));
+
+$("count").textContent=list.length+"件のお店";
+
+$("results").replaceChildren();
+
+if(!list.length){$("results").textContent="条件に合うお店がないよ。条件を変えてみてね！";return}
+
+list.forEach(s=>{
+
+const card=document.createElement("section");card.className="shop";
+
+const h=document.createElement("h2");h.textContent=s.name;card.appendChild(h);
+
+const p=document.createElement("div");p.className="price";p.textContent="予算目安："+s.price.toLocaleString()+"円";card.appendChild(p);
+
+const tags=document.createElement("div");tags.className="tags";
+
+s.tags.forEach(t=>{const x=document.createElement("span");x.className="tag";x.textContent=t;tags.appendChild(x)});card.appendChild(tags);
+
+const desc=document.createElement("p");desc.textContent=s.desc;card.appendChild(desc);
+
+const map=document.createElement("a");map.target="_blank";map.rel="noopener";map.href="https://www.google.com/maps/search/"+encodeURIComponent(s.query);map.textContent="Googleマップで場所を見る";card.appendChild(map);
+
+const info=document.createElement("a");info.className="secondary";info.target="_blank";info.rel="noopener";info.href=s.url;info.textContent="お店の情報を確認";card.appendChild(info);
+
+$("results").appendChild(card);
+
+});
+
+}
+
+["budget","genre","mood"].forEach(id=>$(id).addEventListener("change",render));
+
+$("keyword").addEventListener("input",render);
+
+$("reset").addEventListener("click",()=>{$("budget").value="99999";$("genre").value="all";$("mood").value="all";$("keyword").value="";render()});
+
+render();
+
+</script>
+
+</body>
+
+</html>
